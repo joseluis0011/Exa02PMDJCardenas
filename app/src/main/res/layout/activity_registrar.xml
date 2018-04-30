@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#9CCC65"
+            android:orientation="vertical">
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="outline.json"
+                app:lottie_imageAssetsFolder="typing_dot"
+                app:lottie_loop="true" />
+        </LinearLayout>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" >
+
+           <TextView
+               android:id="@+id/login"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_centerHorizontal="true"
+               android:layout_gravity="center"
+               android:layout_marginTop="20dp"
+               android:text="Registrar"
+               android:textColor="#000000"
+               android:textSize="22sp" />
+           <android.support.design.widget.TextInputLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_marginTop="80dp"
+               android:textAlignment="center"
+               android:textSize="24sp"
+               android:textStyle="bold">
+
+               <EditText
+                   android:id="@+id/ETemail"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:backgroundTint="@color/colorPrimaryDark"
+                   android:drawableLeft="@drawable/user"
+                   android:ems="10"
+                   android:hint="Email"
+                   android:inputType="textEmailAddress" />
+           </android.support.design.widget.TextInputLayout>
+           <android.support.design.widget.TextInputLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_marginTop="160dp"
+               android:textAlignment="center"
+               android:textSize="24sp"
+               android:textStyle="bold">
+
+               <EditText
+                   android:id="@+id/ETpassword"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:backgroundTint="@color/colorPrimaryDark"
+                   android:drawableLeft="@drawable/user"
+                   android:ems="10"
+                   android:hint="Usuario"
+                   android:inputType="textPassword" />
+           </android.support.design.widget.TextInputLayout>
+           <Button
+               android:id="@+id/btnEntrar"
+               style="@style/Base.TextAppearance.AppCompat.Body1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="255dp"
+               android:background="@drawable/background_login"
+               android:clickable="true"
+               android:padding="16dp"
+               android:text="Registrar"
+               android:textAllCaps="false"
+               android:textColor="#fff"
+               android:textSize="18sp"
+               android:onClick="login"/>
+
+       </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
