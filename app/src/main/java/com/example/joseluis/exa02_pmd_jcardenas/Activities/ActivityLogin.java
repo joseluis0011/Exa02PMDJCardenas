@@ -2,9 +2,11 @@ package com.example.joseluis.exa02_pmd_jcardenas.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,10 @@ import android.widget.Toast;
 import com.example.joseluis.exa02_pmd_jcardenas.Core.login.LoginInterface;
 import com.example.joseluis.exa02_pmd_jcardenas.Core.login.LoginPresenter;
 import com.example.joseluis.exa02_pmd_jcardenas.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ActivityLogin extends AppCompatActivity  implements View.OnClickListener,LoginInterface.View{
     Button ingresar,registrar;
@@ -24,48 +30,62 @@ public class ActivityLogin extends AppCompatActivity  implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        initViews();
-    }
-
-    public void initViews() {
         Toast.makeText(getApplicationContext(),"Requiere Internet",Toast.LENGTH_LONG).show();
         ingresar=(Button)findViewById(R.id.btnEntrar);
-//        ingresar.setOnClickListener(this);
         registrar=(Button) findViewById(R.id.register);
-        registrar.setOnClickListener(this);
         email=(EditText)findViewById(R.id.ETemail);
         password=(EditText)findViewById(R.id.ETpassword);
+
+        registrar.setOnClickListener(this);
+        ingresar.setOnClickListener(this);
 
         mLoginPresenter=new LoginPresenter(this);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Please wait, Logging in..");
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnEntrar:
-                checkLoginDetails();
+                String mailR = email.getText().toString();
+                String passR = password.getText().toString();
+                checkLoginDetails(mailR,passR);
                 break;
             case R.id.register:
-                moveToRegisterActivity();
+                String mailS = email.getText().toString();
+                String passS = password.getText().toString();
+                moveToRegisterActivity(mailS,passS);
                 break;
         }
     }
-    private void moveToRegisterActivity() {
-        Intent intent = new Intent(getApplicationContext(), ActivityRegistrar.class);
-        startActivity(intent);
-    }
-    private void checkLoginDetails() {
-        if(!TextUtils.isEmpty(email.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())){
-            initLogin(email.getText().toString(), password.getText().toString());
-        }else{
-            if(TextUtils.isEmpty(email.getText().toString())){
-                email.setError("Please enter a valid email");
-            }if(TextUtils.isEmpty(password.getText().toString())){
-                password.setError("Please enter password");
+    private void moveToRegisterActivity( String email,String password) {
+  //      Intent intent = new Intent(getApplicationContext(), ActivityRegistrar.class);
+  //      startActivity(intent);
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Log.i("SESION","CREADO CORRECTAMENTE");
+                }else{
+                    Log.i("SESION",task.getException().getMessage());
+                }
             }
-        }
+        });
+    }
+    private void checkLoginDetails(String email,String password) {
+   //     if(!TextUtils.isEmpty(email.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())){
+     //       initLogin(email.getText().toString(), password.getText().toString());
+ //       }else{
+   //         if(TextUtils.isEmpty(email.getText().toString())){
+     //           email.setError("Please enter a valid email");
+       //     }if(TextUtils.isEmpty(password.getText().toString())){
+         ///       password.setError("Please enter password");
+    //        }
+      //  }
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password);
+        Intent intent = new Intent(this,ActivityMain.class);
     }
     private void initLogin(String email, String password) {
         mProgressDialog.show();
