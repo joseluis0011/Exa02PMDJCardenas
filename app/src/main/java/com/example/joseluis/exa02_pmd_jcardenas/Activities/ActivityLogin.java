@@ -31,9 +31,9 @@ public class ActivityLogin extends AppCompatActivity  implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Toast.makeText(getApplicationContext(),"Requiere Internet",Toast.LENGTH_LONG).show();
-        ingresar=(Button)findViewById(R.id.btnEntrar);
-        registrar=(Button) findViewById(R.id.register);
-        email=(EditText)findViewById(R.id.ETemail);
+        ingresar=(Button)findViewById(R.id.entra);
+        registrar=(Button) findViewById(R.id.regis);
+        email=(EditText)findViewById(R.id.ETcorreo);
         password=(EditText)findViewById(R.id.ETpassword);
 
         registrar.setOnClickListener(this);
@@ -48,12 +48,12 @@ public class ActivityLogin extends AppCompatActivity  implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnEntrar:
+            case R.id.entra:
                 String mailR = email.getText().toString();
                 String passR = password.getText().toString();
                 checkLoginDetails(mailR,passR);
                 break;
-            case R.id.register:
+            case R.id.regis:
                 String mailS = email.getText().toString();
                 String passS = password.getText().toString();
                 moveToRegisterActivity(mailS,passS);
@@ -67,9 +67,9 @@ public class ActivityLogin extends AppCompatActivity  implements View.OnClickLis
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Log.i("SESION","CREADO CORRECTAMENTE");
+                    Log.w("SESION","CREADO CORRECTAMENTE");
                 }else{
-                    Log.i("SESION",task.getException().getMessage());
+                    Log.w("SESION",task.getException().getMessage());
                 }
             }
         });
