@@ -26,3 +26,4 @@ public class RegistrarPresenter implements RegistrarInterface.Presenter,Registra
         mRegisterView.onRegistrarError(mensaje);
     }
 }
+//hola
