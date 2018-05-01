@@ -95,7 +95,7 @@
                 android:background="#fff" />
 
             <Button
-                android:id="@+id/ingresar"
+                android:id="@+id/entra"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                 android:textColor="#fff"
                 android:textSize="18sp" />
             <Button
-                android:id="@+id/register"
+                android:id="@+id/regis"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
