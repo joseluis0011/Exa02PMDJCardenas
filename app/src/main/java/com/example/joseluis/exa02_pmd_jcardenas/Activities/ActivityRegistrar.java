@@ -39,7 +39,7 @@ public class ActivityRegistrar extends AppCompatActivity implements View.OnClick
 
         mRegistrarPresenter=new RegistrarPresenter(this);
         mPrgressDialog = new ProgressDialog(this);
-        mPrgressDialog.setMessage("Please wait, Adding profile to database.");
+        mPrgressDialog.setMessage("Por Favor espere,lo estamos Registrando.");
     }
 
     @Override
@@ -62,9 +62,9 @@ public class ActivityRegistrar extends AppCompatActivity implements View.OnClick
             initLogin(email.getText().toString(), password.getText().toString());
         }else{
             if(TextUtils.isEmpty(email.getText().toString())){
-                email.setError("Please enter a valid email");
+                email.setError("Porfavor ingrese un correo");
             }if(TextUtils.isEmpty(password.getText().toString())){
-                password.setError("Please enter password");
+                password.setError("Porfavor ingrese un password");
             }
         }
     }
@@ -75,7 +75,7 @@ public class ActivityRegistrar extends AppCompatActivity implements View.OnClick
     @Override
     public void onRegistarSuccess(FirebaseUser firebaseUser) {
         mPrgressDialog.dismiss();
-        Toast.makeText(getApplicationContext(), "Successfully Registered" , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Registro Satisfactorio" , Toast.LENGTH_SHORT).show();
     }
 
     @Override

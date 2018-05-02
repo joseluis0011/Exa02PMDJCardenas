@@ -32,7 +32,8 @@
         </LinearLayout>
        <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="match_parent" >
+           android:layout_height="match_parent"
+           android:background="@drawable/img3">
 
            <TextView
                android:layout_width="wrap_content"
@@ -81,9 +82,9 @@
                    android:layout_centerHorizontal="true"
                    android:layout_centerVertical="true"
                    android:backgroundTint="@color/colorPrimaryDark"
-                   android:drawableLeft="@drawable/user"
+                   android:drawableLeft="@drawable/password"
                    android:ems="10"
-                   android:hint="Usuario"
+                   android:hint="Contraseña"
                    android:inputType="textPassword" />
            </android.support.design.widget.TextInputLayout>
            <Button
@@ -109,7 +110,7 @@
                android:background="@drawable/background_login"
                android:clickable="true"
                android:padding="16dp"
-               android:text="Registrar"
+               android:text="Atras"
                android:textAllCaps="false"
                android:textColor="#fff"
                android:textSize="18sp"
