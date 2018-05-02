@@ -26,7 +26,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="5dp"
                 app:lottie_autoPlay="true"
-                app:lottie_fileName="outline.json"
+                app:lottie_fileName="outline_user.json"
                 app:lottie_imageAssetsFolder="typing_dot"
                 app:lottie_loop="true" />
         </LinearLayout>
@@ -35,7 +35,6 @@
            android:layout_height="match_parent" >
 
            <TextView
-               android:id="@+id/login"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_alignParentTop="true"
@@ -43,7 +42,7 @@
                android:layout_gravity="center"
                android:layout_marginTop="20dp"
                android:text="Registrar"
-               android:textColor="#000000"
+               android:textColor="#fff"
                android:textSize="22sp" />
            <android.support.design.widget.TextInputLayout
                android:layout_width="wrap_content"
@@ -88,11 +87,25 @@
                    android:inputType="textPassword" />
            </android.support.design.widget.TextInputLayout>
            <Button
-               android:id="@+id/btnEntrar"
+               android:id="@+id/btnRegistrar"
                style="@style/Base.TextAppearance.AppCompat.Body1"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_marginTop="255dp"
+               android:background="@drawable/background_login"
+               android:clickable="true"
+               android:padding="16dp"
+               android:text="Registrar"
+               android:textAllCaps="false"
+               android:textColor="#fff"
+               android:textSize="18sp"
+               android:onClick="login"/>
+           <Button
+               android:id="@+id/btnAtras"
+               style="@style/Base.TextAppearance.AppCompat.Body1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="340dp"
                android:background="@drawable/background_login"
                android:clickable="true"
                android:padding="16dp"

@@ -17,8 +17,8 @@ import com.example.joseluis.exa02_pmd_jcardenas.R;
 import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityRegistrar extends AppCompatActivity implements View.OnClickListener,RegistrarInterface.View {
-    TextView txtlogin;
-    Button registrar;
+
+    Button registrar,atras;
     EditText email,password;
     private RegistrarPresenter mRegistrarPresenter;
     ProgressDialog mPrgressDialog;
@@ -30,10 +30,10 @@ public class ActivityRegistrar extends AppCompatActivity implements View.OnClick
     }
 
     private void initViews() {
-        registrar=(Button)findViewById(R.id.btnEntrar);
+        registrar=(Button)findViewById(R.id.btnRegistrar);
         registrar.setOnClickListener(this);
-        txtlogin=(TextView)findViewById(R.id.login);
-        txtlogin.setOnClickListener(this);
+        atras= (Button) findViewById(R.id.btnAtras);
+        atras.setOnClickListener(this);
         email=(EditText)findViewById(R.id.ETemail);
         password=(EditText)findViewById(R.id.ETpassword);
 
@@ -45,10 +45,10 @@ public class ActivityRegistrar extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnEntrar:
+            case R.id.btnRegistrar:
                 checkRegistrationDetails();
                 break;
-            case R.id.login:
+            case R.id.btnAtras:
                 moveToLoginActivity();
                 break;
         }
