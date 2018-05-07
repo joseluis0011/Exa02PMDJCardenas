@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/producto"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Producto" />
+
+    <item
+        android:id="@+id/lista"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Lista" />
+
+    <item
+        android:id="@+id/venta"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Venta" />
+
+
+</menu>

@@ -72,7 +72,7 @@ public class ActivityLogin extends AppCompatActivity  implements View.OnClickLis
     public void onLoginSuccess(String mensaje) {
         mProgressDialog.dismiss();
      Toast.makeText(getApplicationContext(), "Secion Iniciada" , Toast.LENGTH_SHORT).show();
-     startActivity(new Intent(this,ActivityMain.class));
+     startActivity(new Intent(this,MainActivity.class));
      finish();
     }
 

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="#FFE57F"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:layout_gravity="center|top"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="Agregar Producto"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="140dp"
+        android:textAlignment="center"
+        android:textColorHint="#000000"
+        android:contextClickable="true"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+        <EditText
+            android:id="@+id/ETid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="60dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/user"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="220dp"
+        android:textAlignment="center"
+        android:textColorHint="#000000"
+        android:contextClickable="true"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+        <EditText
+            android:id="@+id/ETnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="50dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/user"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="290dp"
+        android:textAlignment="center"
+        android:textColorHint="#000000"
+        android:contextClickable="true"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+        <EditText
+            android:id="@+id/ETprecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="50dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/user"
+            android:ems="10"
+            android:hint="Precio"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/guardar"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Guardar"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="520dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+</RelativeLayout>
